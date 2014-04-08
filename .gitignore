@@ -4,5 +4,4 @@ obj/
 bin/
 packages/
 *.user
-x86/
-x64/
+BotProject/user.config

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using VP;
 
 namespace BotProject
@@ -9,19 +10,17 @@ namespace BotProject
 
         static void Main(string[] args)
         {
-            if (args.Length < 2)
-            {
-                Console.WriteLine("Two arguments required: \"<username>\" <password>");
-                return;
-            }
+            // Instance setup
+            BotInstance  = new Instance();
+            var username = ConfigurationManager.AppSettings["Username"];
+            var password = ConfigurationManager.AppSettings["Password"];
 
-            BotInstance = new Instance();
-
+            // Event setup
             BotInstance.Chat            += (i, m) => Console.WriteLine("User {0} said: {1}", m.Name, m.Message);
             BotInstance.Avatars.Clicked += (i, c) => Console.WriteLine("User #{0} clicked #{1}", c.SourceSession, c.TargetSession);
 
             BotInstance
-                .Login(args[0], args[1], "Bot")
+                .Login(username, password, "Bot")
                 .Enter("Blizzard")
                 .Say("Hello, virtual world!");
 
