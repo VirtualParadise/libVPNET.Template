@@ -34,9 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="libVPNET, Version=0.3.6.26459, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="libVPNET, Version=0.3.8.40393, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\libVPNET.0.3.6-pre\lib\net40\libVPNET.dll</HintPath>
+      <HintPath>..\packages\libVPNET.0.3.8-pre\lib\net40\libVPNET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
